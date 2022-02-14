@@ -1,2 +1,3 @@
 mountpoints:
-  /: https://adobe-my.sharepoint.com/:f:/r/personal/dyland_adobe_com/Documents/helix-playground
+  /: 
+    url: https://adobe-my.sharepoint.com/:f:/r/personal/dyland_adobe_com/Documents/helix-playground
