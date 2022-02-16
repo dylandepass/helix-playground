@@ -122,6 +122,7 @@ export default function decorate(block) {
     }
 
     aemTypeSelect.style.display = 'block';
+    cmsOtherName.style.display = 'none';
   });
 
 
