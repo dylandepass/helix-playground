@@ -173,7 +173,7 @@ export default function decorate(block) {
     var requestOptions = {
       method: 'POST',
       headers,
-      body: body,
+      body: JSON.stringify(body),
     };
 
     fetch("https://main--helix-playground--dylandepass.hlx3.page/sc-qual-form", requestOptions)
