@@ -145,6 +145,10 @@ export default function decorate(block) {
     const translation = document.getElementById("translation").value;
     const assets = document.getElementById("assets").value;
 
+
+    var headers = new Headers();
+    headers.append("Content-Type", "application/json");
+
     const body = {
       data: {
         customerName,
@@ -168,7 +172,8 @@ export default function decorate(block) {
 
     var requestOptions = {
       method: 'POST',
-      body: JSON.stringify(body),
+      headers,
+      body: body,
     };
 
     fetch("https://main--helix-playground--dylandepass.hlx3.page/sc-qual-form", requestOptions)
