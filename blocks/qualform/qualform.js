@@ -178,7 +178,9 @@ export default function decorate(block) {
 
     fetch("https://main--helix-playground--dylandepass.hlx3.page/sc-qual-form", requestOptions)
       .then(response => response.text())
-      .then(result => console.log(result))
+      .then(result => {
+        window.location = "https://main--helix-playground--dylandepass.hlx3.page/submission-complete";
+      })
       .catch(error => console.log('error', error));
 
   });
