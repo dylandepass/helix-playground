@@ -8,7 +8,7 @@ const formHTML = `<div class="rendered-form">
         <input type="text" class="form-control" name="customerName" access="false" id="customerName" required="required" aria-required="true">
     </div>
     <div class="form-group field-customerDivision">
-        <label for="customerDivision" class="text-label">Division</label>
+        <label for="customerDivision" class="text-label">Specific Division, if applicable (e.g. Recruiting)</label>
         <input type="text" class="form-control" name="customerDivision" access="false" id="customerDivision">
     </div>
     <div class="form-group field-drAssociated">
