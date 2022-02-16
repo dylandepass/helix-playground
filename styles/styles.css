@@ -107,7 +107,7 @@ font-size: 75%;
 overflow: scroll;
 }
 
-main input, main button {
+main input, main button, main textarea, main select {
   font-size: 1.25rem;
   width: 100%;
   max-width: 50rem;
@@ -115,6 +115,12 @@ main input, main button {
   margin-bottom: 1rem;
   padding: 0.75rem 0.6rem;    
   border-radius: 0.25rem;
+  box-sizing:border-box;
+}
+
+main select {
+  width: auto;
+  min-width: 200px;
 }
 
 main button {
@@ -128,13 +134,13 @@ main button:hover {
   cursor: pointer;
 }
 
-main input {
+main input, main textarea, main select {
   border: 1px solid rgba(var(--text-color) / 50%);
   color: rgb(var(--text-color));
   background-color: rgba(var(--background-color) / 50%);
 }
 
-main input:hover {
+main input:hover, main textarea:hover, main select:hover {
   border: 1px solid rgba(var(--text-color) / 90%);
 }
 
@@ -181,7 +187,7 @@ main img {
 
 @media (min-width: 600px) {
   html {
-    font-size: 85%;
+    font-size: 100%;
   }
 
   main {
