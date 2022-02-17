@@ -2,6 +2,10 @@ const formHTML = `<div class="rendered-form">
     <div class="">
         <h1>Project Helix SC Opportunity Qualification Questions</h1>
     </div>
+    <div class="form-group field-scEmail">
+        <label for="scEmail" class="text-label">SC Email Address<span class="required">*</span></label>
+        <input type="text" class="form-control" name="scEmail" access="false" id="scEmail" required="required" aria-required="true">
+    </div>
     <h2>Customer Info</h2>
     <div class="form-group field-customerName">
         <label for="customerName" class="text-label">Customer Name<span class="required">*</span></label>
@@ -15,7 +19,7 @@ const formHTML = `<div class="rendered-form">
         <label for="drAssociated">Is there a DR associated with this opportunity?<span class="required">*</span></label>
         <select class="form-control" name="drAssociated" id="drAssociated" required="required" aria-required="true">
             <option value="unknown" selected="true" id="drAssociated-0">Don't Know</option>
-            <option value="yes" id="drAssociated-1">yes</option>
+            <option value="yes" id="drAssociated-1">Yes</option>
             <option value="no" id="drAssociated-2">No</option>
         </select>
     </div>
@@ -26,7 +30,7 @@ const formHTML = `<div class="rendered-form">
     <div class="form-group field-quickStandUp">
         <label for="quickStandUp">Do they have immediate needs for quick site stand-up?<span class="required">*</span></label>
         <select class="form-control" name="quickStandUp" id="quickStandUp" required="required" aria-required="true">
-            <option value="yes" selected="true" id="quickStandUp-0">yes</option>
+            <option value="yes" selected="true" id="quickStandUp-0">Yes</option>
             <option value="no" id="quickStandUp-1">No</option>
             <option value="unknown" id="quickStandUp-2">Don't Know</option>
         </select>
@@ -65,7 +69,7 @@ const formHTML = `<div class="rendered-form">
     </div>
     <h2>Content Authoring</h2>
     <div class="form-group field-currentProcess">
-        <label for="currentProcess" class="textarea-label">What does their current content update and experience creation processes look like?<span class="required">*</span></label>
+        <label for="currentProcess" class="textarea-label">What does their current content update and experience creation process look like?<span class="required">*</span></label>
         <textarea type="textarea" class="form-control" name="currentProcess" access="false" id="currentProcess" required="required" aria-required="true"></textarea>
     </div>
     <div class="form-group field-updateFrequency">
@@ -129,6 +133,7 @@ export default function decorate(block) {
   const submitButton = container.querySelector('button');
   submitButton.addEventListener('click', function (e) {
     e.preventDefault();
+    const scEmail = document.getElementById("scEmail").value;
     const customerName = document.getElementById("customerName").value;
     const customerDivision = document.getElementById("customerDivision").value;
     const drAssociated = document.getElementById("drAssociated").value;
@@ -152,6 +157,7 @@ export default function decorate(block) {
 
     const body = {
       data: {
+        scEmail,
         customerName,
         customerDivision,
         drAssociated,
