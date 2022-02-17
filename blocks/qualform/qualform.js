@@ -4,7 +4,7 @@ const formHTML = `<div class="rendered-form">
     </div>
     <div class="form-group field-scEmail">
         <label for="scEmail" class="text-label">SC Email Address<span class="required">*</span></label>
-        <input type="text" class="form-control" name="scEmail" access="false" id="scEmail" required="required" aria-required="true">
+        <input type="email" class="form-control" name="scEmail" access="false" id="scEmail" required="required" aria-required="true">
     </div>
     <h2>Customer Info</h2>
     <div class="form-group field-customerName">
