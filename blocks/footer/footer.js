@@ -1,4 +1,4 @@
-import { readBlockConfig } from '../../scripts/scripts.js';
+import { readBlockConfig } from '../../scripts/helix-web-framework-1.3.3.esm.min.js';
 
 /**
  * loads and decorates the footer

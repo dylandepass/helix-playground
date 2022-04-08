@@ -1,4 +1,4 @@
-import { readBlockConfig } from '../../scripts/scripts.js';
+import { readBlockConfig } from '../../scripts/helix-web-framework-1.3.2.esm.min.js';
 
 /**
  * collapses all open nav sections
