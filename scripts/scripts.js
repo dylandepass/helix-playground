@@ -51,8 +51,8 @@ export function sampleRUM(checkpoint, data = {}) {
             data.cwv[measurement.name] = measurement.value;
             sendPing();
           };
-            // When loading `web-vitals` using a classic script, all the public
-            // methods can be found on the `webVitals` global namespace.
+          // When loading `web-vitals` using a classic script, all the public
+          // methods can be found on the `webVitals` global namespace.
           window.webVitals.getCLS(storeCWV);
           window.webVitals.getFID(storeCWV);
           window.webVitals.getLCP(storeCWV);
@@ -426,7 +426,7 @@ async function waitForLCP() {
   const hasLCPBlock = (block && lcpBlocks.includes(block.getAttribute('data-block-name')));
   if (hasLCPBlock) await loadBlock(block, true);
 
-  document.querySelector('body').classList.add('appear');
+  //document.querySelector('body').classList.add('appear');
   const lcpCandidate = document.querySelector('main img');
   await new Promise((resolve) => {
     if (lcpCandidate && !lcpCandidate.complete) {

@@ -102,93 +102,93 @@ const formHTML = `<div class="rendered-form">
     <div>
 </div>`
 export default function decorate(block) {
-  // turn links into buttons
-  const form = document.createElement('form');
-  form.classList.add('qualform');
-  form.innerHTML = formHTML;
+    // turn links into buttons
+    const form = document.createElement('form');
+    form.classList.add('qualform');
+    form.innerHTML = formHTML;
 
-  const container = document.querySelector('.qualform');
-  container.appendChild(form);
-
-
-  const aemTypeSelect = document.getElementById('field-aemType');
-  const cmsOtherName = document.getElementById('field-cmsOtherName');
-  cmsOtherName.style.display = 'none';
+    const container = document.querySelector('.qualform');
+    container.appendChild(form);
 
 
-  const cmsSelect = document.getElementById('cms');
-  cmsSelect.addEventListener('change', function (e) {
-    const value = e.target.value;
-    if (value === 'other') {
-      aemTypeSelect.style.display = 'none';
-      cmsOtherName.style.display = 'block';
-      return;
-    }
-
-    aemTypeSelect.style.display = 'block';
+    const aemTypeSelect = document.getElementById('field-aemType');
+    const cmsOtherName = document.getElementById('field-cmsOtherName');
     cmsOtherName.style.display = 'none';
-  });
 
 
-  const submitButton = container.querySelector('button');
-  submitButton.addEventListener('click', function (e) {
-    e.preventDefault();
-    const scEmail = document.getElementById("scEmail").value;
-    const customerName = document.getElementById("customerName").value;
-    const customerDivision = document.getElementById("customerDivision").value;
-    const drAssociated = document.getElementById("drAssociated").value;
-    const goals = document.getElementById("goals").value;
-    const quickStandUp = document.getElementById("quickStandUp").value;
-    const challenges = document.getElementById("challenges").value;
-    const cms = document.getElementById("cms").value;
-    const aemType = document.getElementById("aemType").value;
-    const cmsOtherName = document.getElementById("cmsOtherName").value;
-    const migrationUrgency = document.getElementById("migrationUrgency").value;
-    const webStats = document.getElementById("webStats").value;
-    const currentProcess = document.getElementById("currentProcess").value;
-    const contentAuthorsCount = document.getElementById("contentAuthorsCount").value;
-    const authorSkillLevel = document.getElementById("authorSkillLevel").value;
-    const translation = document.getElementById("translation").value;
-    const assets = document.getElementById("assets").value;
+    const cmsSelect = document.getElementById('cms');
+    cmsSelect.addEventListener('change', function (e) {
+        const value = e.target.value;
+        if (value === 'other') {
+            aemTypeSelect.style.display = 'none';
+            cmsOtherName.style.display = 'block';
+            return;
+        }
+
+        aemTypeSelect.style.display = 'block';
+        cmsOtherName.style.display = 'none';
+    });
 
 
-    var headers = new Headers();
-    headers.append("Content-Type", "application/json");
+    const submitButton = container.querySelector('button');
+    submitButton.addEventListener('click', function (e) {
+        e.preventDefault();
+        const scEmail = document.getElementById("scEmail").value;
+        const customerName = document.getElementById("customerName").value;
+        const customerDivision = document.getElementById("customerDivision").value;
+        const drAssociated = document.getElementById("drAssociated").value;
+        const goals = document.getElementById("goals").value;
+        const quickStandUp = document.getElementById("quickStandUp").value;
+        const challenges = document.getElementById("challenges").value;
+        const cms = document.getElementById("cms").value;
+        const aemType = document.getElementById("aemType").value;
+        const cmsOtherName = document.getElementById("cmsOtherName").value;
+        const migrationUrgency = document.getElementById("migrationUrgency").value;
+        const webStats = document.getElementById("webStats").value;
+        const currentProcess = document.getElementById("currentProcess").value;
+        const contentAuthorsCount = document.getElementById("contentAuthorsCount").value;
+        const authorSkillLevel = document.getElementById("authorSkillLevel").value;
+        const translation = document.getElementById("translation").value;
+        const assets = document.getElementById("assets").value;
 
-    const body = {
-      data: {
-        scEmail,
-        customerName,
-        customerDivision,
-        drAssociated,
-        goals,
-        quickStandUp,
-        challenges,
-        cms,
-        aemType,
-        cmsOtherName,
-        migrationUrgency,
-        webStats,
-        currentProcess,
-        contentAuthorsCount,
-        authorSkillLevel,
-        translation,
-        assets
-      }
-    }
 
-    var requestOptions = {
-      method: 'POST',
-      headers,
-      body: JSON.stringify(body),
-    };
+        var headers = new Headers();
+        headers.append("Content-Type", "application/json");
 
-    fetch("https://main--helix-playground--dylandepass.hlx3.page/sc-qual-form", requestOptions)
-      .then(response => response.text())
-      .then(result => {
-        window.location = "https://main--helix-playground--dylandepass.hlx3.page/submission-complete";
-      })
-      .catch(error => console.log('error', error));
+        const body = {
+            data: {
+                scEmail,
+                customerName,
+                customerDivision,
+                drAssociated,
+                goals,
+                quickStandUp,
+                challenges,
+                cms,
+                aemType,
+                cmsOtherName,
+                migrationUrgency,
+                webStats,
+                currentProcess,
+                contentAuthorsCount,
+                authorSkillLevel,
+                translation,
+                assets
+            }
+        }
 
-  });
+        var requestOptions = {
+            method: 'POST',
+            headers,
+            body: JSON.stringify(body),
+        };
+
+        fetch("https://main--helix-test-content-onedrive--adobe.hlx3.page/forms-service-tests/response-headers/form-allow-post", requestOptions)
+            .then(response => response.text())
+            .then(result => {
+                // window.location = "https://main--helix-playground--dylandepass.hlx3.page/submission-complete";
+            })
+            .catch(error => console.log('error', error));
+
+    });
 }

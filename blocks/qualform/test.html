@@ -1,0 +1,51 @@
+<html style="margin-top: 49px;">
+
+<head>
+  <title></title>
+</head>
+
+<body class="appear">
+  <main>
+    <form class="qualform">
+      <div class="rendered-form">
+        <div class="form-group field-scEmail">
+          <label for="scEmail" class="text-label">SC Email Address<span class="required">*</span></label>
+          <input type="email" class="form-control" name="scEmail" access="false" id="scEmail" required="required"
+            aria-required="true">
+        </div>
+        <div class="submit">
+          <button type="submit">Submit</button>
+          <div></div>
+        </div>
+      </div>
+    </form>
+    <script type="text/javascript">
+      const submitButton = document.querySelector('button');
+      submitButton.addEventListener('click', function (e) {
+        e.preventDefault();
+        var headers = new Headers();
+        headers.append("Content-Type", "application/json");
+
+        const body = {
+          data: {
+            scEmail: "test@test.com"
+          }
+        }
+
+        var requestOptions = {
+          method: 'POST',
+          headers,
+          body: JSON.stringify(body),
+        };
+
+        fetch("https://main--helix-test-content-onedrive--adobe.hlx3.page/forms-service-tests/response-headers/form-allow-post?hlx-pipeline-version=ci1785", requestOptions)
+          .then(response => response.text())
+          .then(result => {
+            // window.location = "https://main--helix-playground--dylandepass.hlx3.page/submission-complete";
+          })
+          .catch(error => console.log('error', error));
+      });
+    </script>
+</body>
+
+</html>
