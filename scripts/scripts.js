@@ -10,53 +10,36 @@
  * governing permissions and limitations under the License.
  */
 
-import { HelixApp, buildBlock } from './helix-web-framework-1.3.3.esm.min.js';
+import { HelixApp, buildBlock } from 'https://cdn.skypack.dev/@dylandepass/helix-web-library@v1.3.11/dist/helix-web-framework.esm.js';
 
-export class App extends HelixApp {
-  constructor(config) {
-    super(config);
-  }
-
-  /**
-   * load everything that happens a lot later, without impacting
-   * the user experience.
-   */
-  loadDelayed() {
-    super.loadDelayed();
-    window.setTimeout(() => import('./delayed.js'), 3000);
-  }
-
-  /**
-   * Builds all synthetic blocks in a container element.
-   * @param {Element} main The container element
-   */
-  buildAutoBlocks(main) {
-    try {
-      this.buildHeroBlock(main);
-    } catch (error) {
-      // eslint-disable-next-line no-console
-      console.error('Auto Blocking failed', error);
-    }
-  }
-
-  buildHeroBlock(main) {
-    const h1 = main.querySelector('h1');
-    const picture = main.querySelector('picture');
-    // eslint-disable-next-line no-bitwise
-    if (h1 && picture && (h1.compareDocumentPosition(picture) & Node.DOCUMENT_POSITION_PRECEDING)) {
-      const section = document.createElement('div');
-      section.append(buildBlock('hero', { elems: [picture, h1] }));
-      main.prepend(section);
-    }
+function buildHeroBlock(main) {
+  const h1 = main.querySelector('h1');
+  const picture = main.querySelector('picture');
+  // eslint-disable-next-line no-bitwise
+  if (h1 && picture && (h1.compareDocumentPosition(picture) & Node.DOCUMENT_POSITION_PRECEDING)) {
+    const section = document.createElement('div');
+    section.append(buildBlock('hero', { elems: [picture, h1] }));
+    main.prepend(section);
   }
 }
 
-/**
- * Decorate Page
- */
-new App({
+function loadEager(main) {
+  console.log('load eager ', main);
+}
+
+HelixApp.init({
   rumEnabled: true,
   rumGeneration: 'project-1',
   productionDomains: ['acme.com'],
   lcpBlocks: ['hero'],
-});
+})
+  .withLoadEager(loadEager)
+  .withBuildAutoBlocks((main) => {
+    try {
+      buildHeroBlock(main);
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.error('Auto Blocking failed', error);
+    }
+  })
+  .decorate();

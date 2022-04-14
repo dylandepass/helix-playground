@@ -1,4 +1,4 @@
-import { readBlockConfig } from '../../scripts/helix-web-framework-1.3.2.esm.min.js';
+import { readBlockConfig } from 'https://cdn.skypack.dev/@dylandepass/helix-web-library@v1.3.11/dist/helix-web-framework.esm.js';
 
 /**
  * collapses all open nav sections
