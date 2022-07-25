@@ -1,0 +1,54 @@
+{
+  "config": [
+    {
+      "key": "slack",
+      "value": "T06DUTYDQ/C01F5TQV0SF"
+    },
+    {
+      "key": "host",
+      "value": "www.adobe.com"
+    }
+  ],
+  "modifiers": {
+    "metadata": {
+      "/one/*": [
+        {
+          "key": "primaryProductName",
+          "value": "Adobe Express"
+        },
+        {
+          "key": "serp-content-type",
+          "value": "product"
+        }
+      ],
+      "/two/*": [
+        {
+          "key": "primaryProductName",
+          "value": "Adobe Express"
+        },
+        {
+          "key": "serp-content-type",
+          "value": "product"
+        }
+      ],
+      "/tree/*": [
+        {
+          "key": "primaryProductName",
+          "value": "Adobe Express"
+        },
+        {
+          "key": "serp-content-type",
+          "value": "product"
+        }
+      ]
+    },
+    "headers": {
+      "/one/*": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
+    }
+  }
+}
