@@ -1,0 +1,19 @@
+html {
+  overflow-y: hidden;
+}
+
+main .section {
+  padding: 0;
+  overflow: hidden;
+}
+
+main>.section>div {
+  max-width: 0;
+  margin: 0;
+}
+
+iframe {
+  width: 100vw;
+  height: 100vh;
+  border: 0;
+}
