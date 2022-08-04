@@ -1,19 +1,52 @@
-html {
-  overflow-y: hidden;
-}
-
 main .section {
   padding: 0;
   overflow: hidden;
 }
 
 main>.section>div {
-  max-width: 0;
   margin: 0;
+  max-width: 100vw;
 }
 
 iframe {
   width: 100vw;
   height: 100vh;
   border: 0;
+}
+
+main .section .hero {
+  position: absolute;
+  text-align: center;
+  margin: 0 100px;
+}
+
+main > div div:nth-of-type(2) {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+main > div div:nth-of-type(3) {
+  background-color: #fff;
+  text-align: center;
+  color: #000;
+}
+
+main > div div:nth-of-type(3) h2 {
+  margin: 0;
+  padding: 50px 0;
+  font-size: 60px;
+}
+
+main > div div:nth-of-type(4) {
+  background-color: #fff;
+}
+
+main > div div:nth-of-type(4) .columns {
+  display: flex;
+  justify-content: space-between;
+}
+
+main > div div:nth-of-type(4) .columns > div {
+  width: 20%;
 }
