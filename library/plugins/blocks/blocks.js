@@ -179,7 +179,7 @@ async function decorate(container, data, query) {
         createCopy(blob);
 
         // Show toast
-        container.dispatchEvent(new CustomEvent('toast', { detail: { foo: 'bar' } }));
+        container.dispatchEvent(new CustomEvent('toast', { detail: { message: 'Copied Block' } }));
       });
 
       if (query) {

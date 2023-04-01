@@ -67,3 +67,7 @@ export function loadCSS(href, callback) {
     callback('noop');
   }
 }
+
+export function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}

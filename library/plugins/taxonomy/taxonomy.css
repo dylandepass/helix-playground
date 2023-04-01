@@ -1,0 +1,21 @@
+:root {
+    --swc-menu-width: 100%;
+}
+
+sp-menu {
+    height: 280px;
+    width: 100%;
+}
+
+sp-menu-item {
+    height: 42px;
+}
+
+.footer {
+    height: 45px;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
