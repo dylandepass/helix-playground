@@ -2,13 +2,14 @@
     --swc-menu-width: 100%;
 }
 
-sp-menu {
-    height: 280px;
-    width: 100%;
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
-sp-menu-item {
-    height: 42px;
+sp-menu {
+    height: 100%;
 }
 
 .footer {

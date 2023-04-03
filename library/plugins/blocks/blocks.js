@@ -146,14 +146,14 @@ function onPreview(event, path) {
 }
 
 async function decorate(container, data, query) {
-  container.dispatchEvent(new CustomEvent('displayLoader'));
+  container.dispatchEvent(new CustomEvent('DisplayLoader'));
   const sideNav = createTag('sp-sidenav', { variant: 'multilevel' });
 
   for (const block of data) {
     const blockVariant = createTag('sp-sidenav-item', { label: block.name, preview: true });
     sideNav.append(blockVariant);
 
-    blockVariant.addEventListener('preview', (e) => onPreview(e, block.path));
+    blockVariant.addEventListener('Preview', (e) => onPreview(e, block.path));
 
     const doc = await fetchBlock(block.path);
     const pageBlocks = doc.body.querySelectorAll('div[class]');
@@ -179,7 +179,7 @@ async function decorate(container, data, query) {
         createCopy(blob);
 
         // Show toast
-        container.dispatchEvent(new CustomEvent('toast', { detail: { message: 'Copied Block' } }));
+        container.dispatchEvent(new CustomEvent('Toast', { detail: { message: 'Copied Block' } }));
       });
 
       if (query) {
@@ -197,7 +197,7 @@ async function decorate(container, data, query) {
 
   // Show blocks and hide loader
   container.append(sideNav);
-  container.dispatchEvent(new CustomEvent('hideLoader'));
+  container.dispatchEvent(new CustomEvent('HideLoader'));
 
   if (sideNav.querySelectorAll('sp-sidenav-item').length === 0) {
     container.innerHTML = renderNoResults();

@@ -10,8 +10,6 @@
  * governing permissions and limitations under the License.
  */
 
-import { createTag } from '../../utils/dom.js';
-
 const selectedTags = [];
 
 function getSelectedLabel() {
@@ -27,9 +25,9 @@ function getFilteredTags(data, query) {
 }
 
 async function decorate(container, data, query) {
-  const sp = createTag('div');
+  const sp = document.createElement('div');
+  sp.classList.add('container');
   sp.innerHTML = /* html */`
-    <div>
         <sp-menu
             label="Select tags"
             selects="multiple"
@@ -42,8 +40,7 @@ async function decorate(container, data, query) {
             <sp-action-button label="Copy" quiet>
                 <sp-icon-copy slot="icon"></sp-icon-copy>
             </sp-action-button>
-        </div>
-    </div>`;
+        </div>`;
 
   const selectedLabel = sp.querySelector('.selectedLabel');
   const items = sp.querySelectorAll('sp-menu-item');
@@ -72,7 +69,7 @@ async function decorate(container, data, query) {
   copyButton.addEventListener('click', () => {
     navigator.clipboard.writeText(selectedTags.join(', '));
     // Show toast
-    container.dispatchEvent(new CustomEvent('toast', { detail: { message: 'Copied Tags' } }));
+    container.dispatchEvent(new CustomEvent('Toast', { detail: { message: 'Copied Tags' } }));
   });
   container.append(sp);
 }
