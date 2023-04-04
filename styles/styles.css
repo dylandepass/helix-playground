@@ -208,3 +208,7 @@ main .section[data-section-status='loading'],
 main .section[data-section-status='initialized'] {
   display: none;
 }
+
+main .library-config-container {
+  padding: 0;
+}
