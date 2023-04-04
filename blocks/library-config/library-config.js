@@ -3,8 +3,6 @@ import { readBlockConfig } from '../../scripts/lib-franklin.js';
 
 export default function decorate(block) {
   const blockConfig = readBlockConfig(block);
-  console.log(blockConfig);
-  block.innerHTML = '';
   const library = document.createElement('franklin-library');
   library.config = {};
 
@@ -12,5 +10,5 @@ export default function decorate(block) {
     library.config[attr] = blockConfig[attr];
   })
 
-  block.append(library);
+  block.replaceChildren(library);
 }
