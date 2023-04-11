@@ -1,5 +1,6 @@
 {
   "project": "helix-playground",
+  "host": "stock.adobe.com",
   "plugins": [
     {
       "id": "franklin-library",
