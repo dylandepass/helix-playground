@@ -1,5 +1,9 @@
 {
   "project": "helix-playground",
+  "sourceFormat": {
+    "name": "Document Authoring",
+    "pattern": "https://custom.live/edit#/{{org}}/{{repo}}{{pathname}}"
+  },
   "plugins": [
     {
       "id": "franklin-library",
