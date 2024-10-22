@@ -17,6 +17,75 @@
     {
       "id": "publish",
       "confirm": true
+    }, 
+    {
+      "id": "plugin-1",
+      "title": "Iiiiiiii",
+      "url": "https://www.aem.live/"
+    },
+    {
+      "id": "container-1",
+      "title": "Tools",
+      "isContainer": true
+    },
+    {
+      "id": "child-1",
+      "title": "Child 1",
+      "containerId": "container-1",
+      "url": "https://www.aem.live/"
+    },
+    {
+      "id": "child-2",
+      "title": "Child 2",
+      "containerId": "container-1",
+      "url": "https://www.aem.live/"
+    },
+    {
+      "id": "plugin-2",
+      "title": "Mmmm",
+      "url": "https://www.aem.live/"
+    },
+    {
+      "id": "plugin-3",
+      "title": "Iiiiiiii",
+      "url": "https://www.aem.live/"
+    },
+    {
+      "id": "plugin-4",
+      "title": "Mmmmmmmm",
+      "url": "https://www.aem.live/"
+    },
+    {
+      "id": "plugin-5",
+      "title": "Test Plugin 5",
+      "environments": ["live"],
+      "url": "https://www.aem.live/"
+    },
+    {
+      "id": "plugin-6",
+      "title": "Test Plugin 6",
+      "environments": ["live"],
+      "event": "plugin-6"
+    },
+    {
+      "id": "container-2",
+      "title": "Container 2",
+      "environments": ["live"],
+      "isContainer": true
+    },
+    {
+      "id": "child-3",
+      "title": "Child 3",
+      "containerId": "container-2",
+      "environments": ["live"],
+      "url": "https://www.aem.live/"
+    },
+    {
+      "id": "child-4",
+      "title": "Child 4",
+      "containerId": "container-2",
+      "environments": ["live"],
+      "url": "https://www.aem.live/"
     }
   ]
 }
